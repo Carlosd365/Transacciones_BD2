@@ -10,20 +10,19 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #d6d7eb;
+  background-color: #F4EFF9;
 }
 
-
 .formulario {
-  background-color: #eaeaf5;
+  background-color: #ECE3F5;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 450px;
-  height: 350px;
+  width: 420px;
+  height: 290px;
   border-radius: 30px;
-  box-shadow: 1px 1px 10px gray;
   gap: 20px;
+  box-shadow: 1px 1px 10px gray;
 }
 
 .inputs {
@@ -44,11 +43,11 @@ input{
 
 input:focus{
   border-width: 2px;
-  border-bottom-color: #9A9CEA;
+  border-bottom-color: #BFA0DF;
 }
 
 input:focus::placeholder{
-  color: #9A9CEA;
+  color: #BFA0DF;
 }
 
 
@@ -61,8 +60,8 @@ input:focus::placeholder{
 
 .btn-accion { 
   margin: 7px 0 7px 20px;
-  border: 0.1px solid #7455e4;
-  color: #7455e4;
+  border: 0.1px solid #8A50C4;
+  color: #8A50C4;
   border-radius: 8px;
   width: 100px;
   height: 40px;
@@ -78,7 +77,7 @@ input:focus::placeholder{
 .btn-accion:not(:disabled):hover {
   border: none;
   color: white;
-  background-color: #7455e4;
+  background-color: #531097b9;
   cursor: pointer;
 }
 
