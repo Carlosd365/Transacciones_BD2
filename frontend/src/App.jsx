@@ -8,7 +8,7 @@ function App() {
   const [guardar, setGuardar] = useState(false);
   const [datos, setDatos] = useState({
     nombre: '',
-    apellido: '' // Nota preguntar a carlos como estan los atributos
+    apellido: '' 
   });
 
   const iniciarTransaccion = async () =>{
@@ -48,7 +48,7 @@ function App() {
     } catch (error) {
       alert('Error al hacer commit');
     }
-  }
+  };
 
   const rollBackDatos = async () => {
     try {
@@ -58,9 +58,7 @@ function App() {
     } catch (error) {
       alert('Error al hacer rollback');
     }
-  }
-
-  
+  };
 
   return (
     <div className="App">
