@@ -12,10 +12,12 @@ function App() {
   });
 
   const iniciarTransaccion = async () =>{
+    try {
+    await api.post('/api/transaccion/iniciar');
     setTransaccion(true);
-
-    // Aqui va la petición para iniciar la transacción (Carlos)
-    // Ejemplo const response = await api.get('/hola');
+  } catch (error) {
+    alert('Error al iniciar transacción');
+  }
   };
 
   const obtenerDatos = (e)=>{
@@ -25,28 +27,37 @@ function App() {
     });
   };
 
-  const guardarDatos = () =>{
-    setGuardar(true);
-    setDatos({
-      nombre: '',
-    apellido: '',
-    });
-
-    // Aqui va la petición para hacer inserción (Carlos)
-    // accedes a los datos 
-    //const nombre = datos.nombre
+  const guardarDatos = async () =>{
+    try {
+      await api.post('/api/transaccion/insertar', {
+        nombre: datos.nombre,
+        apellido: datos.apellido,
+      });
+      setGuardar(true);
+      setDatos({ nombre: '', apellido: '' });
+    } catch (error) {
+      alert('Error al guardar datos');
+    }
   };
 
-  const commitDatos = () => {
-    setGuardar(false);
-    setTransaccion(false);
-    // Aqui va la petición para hacer commit (Carlos)
+  const commitDatos = async () => {
+    try {
+      await api.post('/api/transaccion/commit');
+      setGuardar(false);
+      setTransaccion(false);
+    } catch (error) {
+      alert('Error al hacer commit');
+    }
   }
 
-   const rollBackDatos = () => {
-    setGuardar(false);
-    setTransaccion(false);
-    // Aqui va la petición para hacer rollBack (Carlos)
+  const rollBackDatos = async () => {
+    try {
+      await api.post('/api/transaccion/rollback');
+      setGuardar(false);
+      setTransaccion(false);
+    } catch (error) {
+      alert('Error al hacer rollback');
+    }
   }
 
   
