@@ -26,3 +26,8 @@ input:focus{
 input:focus::placeholder{
     color: #BFA0DF;
 }
+
+.btn-guardar-instruccion{
+    border: none;
+    
+}

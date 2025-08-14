@@ -3,8 +3,10 @@ import { useState } from 'react';
 
 import '../styles/entradas.css'
 
-export default function Entradas({comando}){
-    const [datos, setDatos] = useState({
+export default function Entradas({comando, onUsuarios}){
+
+    const [usuario, setUsuario] = useState({
+        id: 0,
         nombre: '',
         apellido: '' 
     });
@@ -13,10 +15,49 @@ export default function Entradas({comando}){
     // Insertar 2
     // Actualizar 3
     // Eliminar 4
-    console.log("Hola", comando)
+    const guardarInstruccion = async () =>{
+        if (comando === "1"){
+            try {
+                const response = await api.get('/api/transaccion/leer');
+                console.log("Hay algo aqui", response.data)
+                onUsuarios(response.data)
+            } catch (error) {
+                alert('Error al mostrar datos');
+            }
+
+        } else if (comando === "2"){
+            try {
+                await api.post('/api/transaccion/insertar', {
+                    nombre: usuario.nombre,
+                    apellido: usuario.apellido,
+                });
+            } catch (error) {
+                alert('Error al guardar datos');
+            }
+        
+
+        } else if (comando === "3"){
+            try {
+                await api.put('/api/transaccion/actualizar', {
+                    id: usuario.id,
+                    nombre: usuario.nombre,
+                });
+            } catch (error) {
+                alert('Error al actuallizar datos');
+            }
+
+        } else if (comando === "4"){
+            try {
+                await api.delete(`/api/transaccion/eliminar/${usuario.id}`);
+            } catch (error) {
+                alert('Error al eliminar datos');
+            }
+
+        }
+    }
     const obtenerDatos = (e)=>{
-        setDatos({
-            ...datos,
+        setUsuario({
+            ...usuario,
             [e.target.name]: e.target.value,
         });
     };
@@ -32,14 +73,14 @@ export default function Entradas({comando}){
                     type="text" 
                     placeholder='Nombres' 
                     name='nombre'
-                    value={datos.nombre}
+                    value={usuario.nombre}
                     onChange={obtenerDatos}
                     />
                     <input 
                     type="text" 
                     placeholder='Apellidos'
                     name='apellido'
-                    value={datos.apellido}
+                    value={usuario.apellido}
                     onChange={obtenerDatos}
                     />
                 </div>
@@ -51,14 +92,14 @@ export default function Entradas({comando}){
                     type="number" 
                     placeholder='Id' 
                     name='id'
-                    value={datos.nombre}
+                    value={usuario.id}
                     onChange={obtenerDatos}
                     />
                     <input 
                     type="text" 
                     placeholder='Nombre'
                     name='nombre'
-                    value={datos.apellido}
+                    value={usuario.nombre}
                     onChange={obtenerDatos}
                     />
                 </div>
@@ -69,9 +110,15 @@ export default function Entradas({comando}){
                     type="number" 
                     placeholder='Id' 
                     name='id'
-                    value={datos.nombre}
+                    value={usuario.id}
                     onChange={obtenerDatos}
                     />
+                </div>
+            )}
+
+            {(comando === "1" || comando === "2" || comando === "3" || comando === "4") &&(
+                <div>
+                    <button className='btn-guardar-instruccion' onClick={guardarInstruccion}>Guardar</button>
                 </div>
             )}
         </div>

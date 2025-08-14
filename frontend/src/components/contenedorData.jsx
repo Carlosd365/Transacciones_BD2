@@ -1,12 +1,8 @@
 import '../styles/contenedorData.css'
 
-export default function ContenedorData ({nivelAislamiento}){
+export default function ContenedorData ({nivelAislamiento, usuarios}){
     // Info obtenida del select 
-    const datos = [
-        {id: 1, nombres: 'Daniela', apellidos: 'Matul'},
-        {id: 1, nombres: 'Daniela', apellidos: 'Matul'},
-        {id: 1, nombres: 'Daniela', apellidos: 'Matul'}
-    ]
+    const datos = usuarios;
 
     return(
         <div className="contenido">
@@ -22,8 +18,8 @@ export default function ContenedorData ({nivelAislamiento}){
                     {datos.map((dato) =>
                     <tr>
                         <td>{dato.id}</td>
-                        <td>{dato.nombres}</td>
-                        <td>{dato.apellidos}</td>
+                        <td>{dato.nombre}</td>
+                        <td>{dato.apellido}</td>
                     </tr>
                     )}
                 </tbody>
