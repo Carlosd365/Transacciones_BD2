@@ -6,14 +6,16 @@ import { useState } from 'react';
 
 function App() {
   const [nivelAislamiento, setNivelAislamiento] = useState(null);
+  const [usuarios, setUsuarios] = useState ([])
   const recibirNA = (valor) => setNivelAislamiento(valor);
+  const recibirUsuario = (valor) => setUsuarios(valor);
 
   return (
     <div className="App">
       <h1 className='titulo-inicio'>Transacciones</h1>
       <div className="contenedor-principal-form">
-        <Form onNivelAislamiento={recibirNA} nivelAislamiento={nivelAislamiento}/>
-        <ContenedorData nivelAislamiento={nivelAislamiento}/>
+        <Form onNivelAislamiento={recibirNA} nivelAislamiento={nivelAislamiento} onUsuarios={recibirUsuario} usuarios={usuarios}/>
+        <ContenedorData nivelAislamiento={nivelAislamiento} usuarios={usuarios}/>
       </div>
     </div>
   );
