@@ -1,0 +1,28 @@
+.inputs {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+input{
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(145, 139, 139, 0.539);
+}
+
+input:focus{
+    border-width: 2px;
+    border-bottom-color: #BFA0DF;
+}
+
+input:focus::placeholder{
+    color: #BFA0DF;
+}

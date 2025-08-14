@@ -1,0 +1,53 @@
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content:center;
+    width: 40%;
+}
+
+.select{
+    margin: 7px 0 7px 20px;
+    border: 0.1px solid #8A50C4;
+    color: #8A50C4;
+    border-radius: 8px;
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    text-align: center;
+}
+
+
+.select:focus{
+    outline: none;  
+    border: 0.1px 0.1px 0 0.1px solid #8A50C4;
+    border-radius:  8px 8px 0 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-accion { 
+    margin: 7px 0 7px 20px;
+    border: 0.1px solid #8A50C4;
+    color: #8A50C4;
+    border-radius: 8px;
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+}
+
+
+.btn-accion:disabled{
+    border: 1px solid rgba(145, 139, 139, 0.539);
+    color: rgba(145, 139, 139, 0.539);
+}
+
+.btn-accion:not(:disabled):hover {
+    border: none;
+    color: white;
+    background-color: #531097b9;
+    cursor: pointer;
+}

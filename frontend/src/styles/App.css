@@ -6,79 +6,29 @@
 
 .App {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #F4EFF9;
+  background-color: #ffffff;
 }
 
-.formulario {
-  background-color: #ECE3F5;
+.titulo-inicio {
+  padding: 50px;
+  font-size: 2.5rem;
+  color: #390b67b9;
+}
+
+.contenedor-principal-form {
+  background-color: #F4EFF9;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 420px;
-  height: 290px;
+  width: 60rem;
+  height: 23rem;
   border-radius: 30px;
   gap: 20px;
-  box-shadow: 1px 1px 10px gray;
-}
-
-.inputs {
-  position: relative;
-  margin: 10px 0 0 0;
-}
-
-input{
-  font-size: 16px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 200px;
-  outline: none;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(145, 139, 139, 0.539);
-}
-
-input:focus{
-  border-width: 2px;
-  border-bottom-color: #BFA0DF;
-}
-
-input:focus::placeholder{
-  color: #BFA0DF;
 }
 
 
-.buttons {
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid rgba(145, 139, 139, 0.539);
-
-}
-
-.btn-accion { 
-  margin: 7px 0 7px 20px;
-  border: 0.1px solid #8A50C4;
-  color: #8A50C4;
-  border-radius: 8px;
-  width: 100px;
-  height: 40px;
-  background-color: transparent;
-}
-
-
-.btn-accion:disabled{
-  border: 1px solid rgba(145, 139, 139, 0.539);
-  color: rgba(145, 139, 139, 0.539);
-}
-
-.btn-accion:not(:disabled):hover {
-  border: none;
-  color: white;
-  background-color: #531097b9;
-  cursor: pointer;
-}
 
 
